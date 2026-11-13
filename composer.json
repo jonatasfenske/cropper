@@ -1,0 +1,50 @@
+{
+    "name": "jonatasfenske/cropper",
+    "description": "Crop inteligente de imagens PHP 8.5 com Focal Point, suporte AVIF/WebP nativo, batch processing para responsive images e geração de tag <picture>",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["php85", "image-crop", "thumbnail", "webp", "avif", "responsive-images", "focal-point"],
+    "homepage": "https://github.com/jonatasfenske/cropper",
+    "authors": [
+        {
+            "name": "Robson V. Leite",
+            "email": "cursos@upinside.com.br",
+            "role": "Original Author"
+        },
+        {
+            "name": "Jonatas Fenske",
+            "role": "PHP 8.5 Modernization"
+        }
+    ],
+    "require": {
+        "php": ">=8.5",
+        "ext-gd": "*",
+        "ext-mbstring": "*",
+        "ext-fileinfo": "*"
+    },
+    "suggest": {
+        "ext-imagick": "Para performance superior e suporte AVIF completo"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.0",
+        "phpstan/phpstan": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JonatasFenske\\Cropper\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JonatasFenske\\Cropper\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse src tests --level=max"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
