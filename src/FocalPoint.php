@@ -71,7 +71,6 @@ class FocalPoint
             'face' => $this->detectFace($imagePath, $width, $height),
             'entropy' => $this->detectEntropy($imagePath, $width, $height),
             'custom' => $this->detectCustom($width, $height),
-            default => $this->detectCenter($width, $height),
         };
     }
 
@@ -123,7 +122,6 @@ class FocalPoint
             }
         }
 
-        imagedestroy($image);
 
         if ($skinPixels === []) {
             return $this->detectCenter($width, $height);
@@ -170,7 +168,6 @@ class FocalPoint
             }
         }
 
-        imagedestroy($image);
 
         return $bestBlock;
     }

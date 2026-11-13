@@ -187,8 +187,6 @@ class Cropper
 
  $outputPath = $this->gdSaveOutput($thumb);
 
- imagedestroy($source);
- imagedestroy($thumb);
 
  if ($this->webP && $outputPath !== null) {
  return $this->convertToWebP($outputPath);
@@ -213,8 +211,6 @@ class Cropper
 
  $outputPath = $this->gdSaveOutput($thumb);
 
- imagedestroy($source);
- imagedestroy($thumb);
 
  if ($this->webP && $outputPath !== null) {
  return $this->convertToWebP($outputPath);
@@ -268,7 +264,6 @@ class Cropper
  'png' => imagepng($thumb, $outputPath, $this->compressor),
  'gif' => imagegif($thumb, $outputPath),
  'webp' => imagewebp($thumb, $outputPath, $this->quality),
- default => false,
  };
 
  return $result ? $outputPath : null;
@@ -401,7 +396,6 @@ class Cropper
 
  if ($image instanceof GdImage) {
  imagewebp($image, $webPPath, $this->quality);
- imagedestroy($image);
 
  if ($removeOriginal && $imagePath !== $webPPath && file_exists($imagePath)) {
  unlink($imagePath);

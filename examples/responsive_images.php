@@ -25,7 +25,6 @@ $color = imagecolorallocate($img, 100, 150, 200);
 imagefilledrectangle($img, 0, 0, 1919, 1079, $color);
 $testImage = $testDir . '/hero.jpg';
 imagejpeg($img, $testImage, 90);
-imagedestroy($img);
 
 // 1. Crop simples com WebP
 $cropper = new Cropper($testDir . '/cache', quality: 80, webP: true);

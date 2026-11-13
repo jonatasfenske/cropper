@@ -40,7 +40,6 @@ final class FocalPointTest extends TestCase
         $img = imagecreatetruecolor(200, 100);
         $path = $this->tempDir . '/center.png';
         imagepng($img, $path);
-        imagedestroy($img);
 
         $fp = new FocalPoint('center');
         $point = $fp->detect($path);
@@ -54,7 +53,6 @@ final class FocalPointTest extends TestCase
         $img = imagecreatetruecolor(400, 200);
         $path = $this->tempDir . '/custom.png';
         imagepng($img, $path);
-        imagedestroy($img);
 
         $fp = new FocalPoint('custom');
         $fp->setCustomPoint(75, 25); // 75% direita, 25% topo
@@ -69,7 +67,6 @@ final class FocalPointTest extends TestCase
         $img = imagecreatetruecolor(200, 100);
         $path = $this->tempDir . '/custom_default.png';
         imagepng($img, $path);
-        imagedestroy($img);
 
         $fp = new FocalPoint('custom');
         $point = $fp->detect($path);
@@ -93,7 +90,6 @@ final class FocalPointTest extends TestCase
 
         $path = $this->tempDir . '/entropy.png';
         imagepng($img, $path);
-        imagedestroy($img);
 
         $fp = new FocalPoint('entropy');
         $point = $fp->detect($path);
@@ -116,7 +112,6 @@ final class FocalPointTest extends TestCase
 
         $path = $this->tempDir . '/face.png';
         imagepng($img, $path);
-        imagedestroy($img);
 
         $fp = new FocalPoint('face');
         $point = $fp->detect($path);
@@ -139,7 +134,6 @@ final class FocalPointTest extends TestCase
         $img = imagecreatetruecolor(100, 100);
         $path = $this->tempDir . '/clamp.png';
         imagepng($img, $path);
-        imagedestroy($img);
 
         $fp = new FocalPoint('custom');
         $fp->setCustomPoint(150, -10); // Fora dos limites → clamp para 100 e 0

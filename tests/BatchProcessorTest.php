@@ -63,7 +63,6 @@ final class BatchProcessorTest extends TestCase
  imagefilledrectangle($img, 0, 0, $width - 1, $height - 1, $color);
  $path = "{$this->tempDir}/{$filename}";
  imagepng($img, $path);
- imagedestroy($img);
  return $path;
  }
 

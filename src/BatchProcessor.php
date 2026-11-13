@@ -30,7 +30,7 @@ class BatchProcessor
      *            ['width' => 1280, 'suffix' => '-lg'],
      *            ['width' => 1920, 'suffix' => '-xl'],
      *        ]
-     * @return array<int, array{path: string, width: int, height: int, size: int}>
+     * @return array<int, array{path: string, width: int, height: int, size: int, suffix: string}>
      *         Array com caminhos e metadados das imagens geradas
      */
     public function generateResponsive(string $imagePath, array $sizes): array
